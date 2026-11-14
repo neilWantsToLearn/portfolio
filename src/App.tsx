@@ -74,7 +74,7 @@ export function App() {
     <div className="min-h-screen bg-[#0C0D12] text-neutral-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-200">
       {/* ─── Minimal Navigation ─── */}
       <header className="fixed top-0 left-0 right-0 z-40 bg-[#0C0D12]/85 backdrop-blur-md border-b border-white/[0.06]">
-        <div className="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
           <a href="#" className="flex items-center gap-2 group">
             <span className="text-xl font-bold tracking-tight text-white group-hover:text-cyan-400 transition-colors">
               Neil Cirus
@@ -104,58 +104,131 @@ export function App() {
         </div>
       </header>
 
-      <main className="max-w-5xl mx-auto px-6 pt-36 pb-28 space-y-36">
-        {/* ─── Hero Section ─── */}
-        <section className="space-y-10 pt-4">
-          <div className="space-y-4">
-            <p className="text-sm font-mono tracking-widest uppercase text-cyan-400">
-              BSIT Student • STI College Batangas
-            </p>
-            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.05]">
-              Full-Stack Developer <br />
-              <span className="text-neutral-500">&amp; Digital Artist</span>
-            </h1>
-          </div>
+      <main className="max-w-6xl mx-auto px-6 pt-32 sm:pt-36 pb-28 space-y-36">
+        {/* ─── Hero Section with Left Polaroid & Sticker Collage ─── */}
+        <section className="pt-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+            {/* Left Column: Polaroid Photo + Procreate Logo + ShidongArts Sticker */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-start">
+              <div className="relative w-full max-w-[320px] sm:max-w-[340px] pt-4">
+                {/* Metallic Paperclip SVG graphic at top-right of polaroid */}
+                <div className="absolute -top-3 right-8 z-30 pointer-events-none drop-shadow-md">
+                  <svg width="34" height="64" viewBox="0 0 34 64" fill="none">
+                    <path
+                      d="M10 20V48C10 52.4183 13.5817 56 18 56C22.4183 56 26 52.4183 26 48V14C26 7.37258 20.6274 2 14 2C7.37258 2 2 7.37258 2 14V46"
+                      stroke="#CBD5E1"
+                      strokeWidth="3.5"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M10 20V48C10 52.4183 13.5817 56 18 56C22.4183 56 26 52.4183 26 48V14C26 7.37258 20.6274 2 14 2C7.37258 2 2 7.37258 2 14V46"
+                      stroke="#94A3B8"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      opacity="0.8"
+                    />
+                  </svg>
+                </div>
 
-          <p className="text-lg sm:text-2xl text-neutral-300 font-normal leading-relaxed max-w-3xl">
-            I build responsive web applications with{' '}
-            <span className="text-white font-medium">React, TypeScript &amp; PostgreSQL</span>, and create custom pet portraits and digital artwork through{' '}
-            <span className="text-white font-medium">ShidongArts</span> using Procreate on iPad.
-          </p>
+                {/* Main Polaroid Frame */}
+                <div className="bg-[#FAF8F5] p-3.5 pb-6 rounded-lg shadow-2xl shadow-black/80 transform -rotate-2 hover:rotate-0 transition-transform duration-500 border border-neutral-300 relative z-10 group">
+                  {/* Photo itself */}
+                  <div className="aspect-[4/5] overflow-hidden rounded bg-neutral-900 border border-neutral-200">
+                    <img
+                      src="/profile/neil-portrait.jpg"
+                      alt="Neil Cirus Samsaman"
+                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
 
-          <div className="flex flex-wrap items-center gap-6 pt-2">
-            <a
-              href="#ayumi"
-              className="px-6 py-3.5 rounded-full bg-white text-black font-semibold text-sm hover:bg-neutral-200 transition-all"
-            >
-              View Ayumi Project
-            </a>
-            <a
-              href="#artworks"
-              className="px-6 py-3.5 rounded-full bg-white/[0.06] text-white hover:bg-white/[0.12] border border-white/10 font-semibold text-sm transition-all"
-            >
-              View 100+ Commissions
-            </a>
-            <button
-              onClick={handleCopyPhone}
-              className="text-xs font-mono text-neutral-400 hover:text-cyan-400 flex items-center gap-2 transition-colors cursor-pointer"
-            >
-              {copied ? (
-                <>
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="text-emerald-400 font-bold">0976 344 6957 Copied!</span>
-                </>
-              ) : (
-                <>
-                  <Phone className="w-3.5 h-3.5" />
-                  <span>0976 344 6957</span>
-                </>
-              )}
-            </button>
+                  {/* Handwritten / Clean Polaroid Label */}
+                  <div className="pt-3 px-1 flex items-center justify-between text-neutral-800">
+                    <span className="font-mono text-xs font-bold tracking-tight">
+                      Neil Cirus Samsaman
+                    </span>
+                    <span className="text-[11px] font-mono text-neutral-500">
+                      BSIT STI '26
+                    </span>
+                  </div>
+                </div>
+
+                {/* Floating Procreate App Icon Badge */}
+                <div className="absolute -top-3 -left-3 sm:-left-5 z-20 transform -rotate-12 hover:rotate-0 transition-transform duration-300 drop-shadow-2xl">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-black p-1 border-2 border-white/20 shadow-xl overflow-hidden flex items-center justify-center">
+                    <img
+                      src="/profile/procreate-logo.png"
+                      alt="Procreate on iPad"
+                      className="w-full h-full object-cover rounded-xl"
+                    />
+                  </div>
+                </div>
+
+                {/* Floating ShidongArts Cat Sticker */}
+                <div className="absolute -bottom-6 -right-6 sm:-right-8 z-20 transform rotate-6 hover:rotate-0 hover:scale-105 transition-all duration-300 drop-shadow-[0_12px_24px_rgba(0,0,0,0.6)]">
+                  <div className="w-28 sm:w-32 cursor-pointer">
+                    <img
+                      src="/profile/shidong-arts-logo.png"
+                      alt="ShidongArts Logo Sticker"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Hero Headline, Subtitle & Buttons */}
+            <div className="lg:col-span-7 space-y-8">
+              <div className="space-y-3">
+                <p className="text-xs sm:text-sm font-mono tracking-widest uppercase text-cyan-400">
+                  BSIT STUDENT • STI COLLEGE BATANGAS
+                </p>
+                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.08]">
+                  Full-Stack Developer <br />
+                  <span className="text-neutral-500">&amp; Digital Artist</span>
+                </h1>
+              </div>
+
+              <p className="text-base sm:text-xl text-neutral-300 font-normal leading-relaxed max-w-2xl">
+                I build responsive web applications with{' '}
+                <span className="text-white font-medium">React, TypeScript &amp; PostgreSQL</span>, and create custom pet portraits and digital artwork through{' '}
+                <span className="text-white font-medium">ShidongArts</span> using Procreate on iPad.
+              </p>
+
+              <div className="flex flex-wrap items-center gap-5 pt-2">
+                <a
+                  href="#ayumi"
+                  className="px-6 py-3 rounded-full bg-white text-black font-semibold text-sm hover:bg-neutral-200 transition-all shadow-lg"
+                >
+                  View Ayumi Project
+                </a>
+                <a
+                  href="#artworks"
+                  className="px-6 py-3 rounded-full bg-white/[0.06] text-white hover:bg-white/[0.12] border border-white/10 font-semibold text-sm transition-all"
+                >
+                  View 100+ Commissions
+                </a>
+                <button
+                  onClick={handleCopyPhone}
+                  className="text-xs font-mono text-neutral-400 hover:text-cyan-400 flex items-center gap-2 transition-colors cursor-pointer"
+                >
+                  {copied ? (
+                    <>
+                      <Check className="w-3.5 h-3.5 text-emerald-400" />
+                      <span className="text-emerald-400 font-bold">0976 344 6957 Copied!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Phone className="w-3.5 h-3.5" />
+                      <span>0976 344 6957</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* ─── Featured Project: Ayumi with Real UI Screenshots ─── */}
+        {/* ─── Featured Project: Ayumi ─── */}
         <section id="ayumi" className="space-y-10 scroll-mt-28">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/[0.08] pb-6">
             <div>
@@ -444,7 +517,7 @@ export function App() {
           </div>
         </section>
 
-        {/* ─── Contact Section (Clean Direct Links, No Form) ─── */}
+        {/* ─── Contact Section (Clean Direct Links) ─── */}
         <section id="contact" className="space-y-10 scroll-mt-28">
           <div className="space-y-3">
             <span className="text-xs font-mono uppercase tracking-widest text-cyan-400">
@@ -515,13 +588,13 @@ export function App() {
 
       {/* ─── Minimal Footer ─── */}
       <footer className="border-t border-white/[0.06] py-10 text-center text-xs font-mono text-neutral-500">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <span>© {new Date().getFullYear()} Neil Cirus Samsaman • ShidongArts</span>
           <span>Batangas, Philippines</span>
         </div>
       </footer>
 
-      {/* ─── Lightbox Modal (For Artworks & Ayumi Screenshots) ─── */}
+      {/* ─── Lightbox Modal ─── */}
       {selectedImage && (
         <div
           className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
