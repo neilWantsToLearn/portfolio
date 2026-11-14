@@ -158,9 +158,9 @@ export function App() {
               </div>
             </div>
 
-            {/* Right Column: Polaroid Photo + Large Procreate Logo + Large ShidongArts Sticker */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-end order-1 lg:order-2">
-              <div className="relative w-full max-w-[340px] sm:max-w-[370px] pt-4 pr-3">
+            {/* Right Column: Polaroid Photo + Large Procreate Logo + Super Sized ShidongArts Sticker */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end order-1 lg:order-2 pb-8 sm:pb-12 lg:pb-0">
+              <div className="relative w-full max-w-[340px] sm:max-w-[380px] pt-4 pr-4 sm:pr-8">
                 {/* Metallic Paperclip SVG graphic at top-right of polaroid */}
                 <div className="absolute -top-3 right-8 z-30 pointer-events-none drop-shadow-md">
                   <svg width="34" height="64" viewBox="0 0 34 64" fill="none">
@@ -202,8 +202,8 @@ export function App() {
                   </div>
                 </div>
 
-                {/* Enlarged Floating Procreate App Icon Badge */}
-                <div className="absolute -top-5 -left-5 sm:-left-8 z-20 transform -rotate-12 hover:rotate-0 hover:scale-105 transition-all duration-300 drop-shadow-2xl">
+                {/* Floating Procreate App Icon Badge */}
+                <div className="absolute -top-6 -left-6 sm:-left-9 z-20 transform -rotate-12 hover:rotate-0 hover:scale-105 transition-all duration-300 drop-shadow-2xl">
                   <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-black p-2 border-2 border-white/20 shadow-2xl overflow-hidden flex items-center justify-center">
                     <img
                       src="/profile/procreate-logo.png"
@@ -213,13 +213,13 @@ export function App() {
                   </div>
                 </div>
 
-                {/* Enlarged Floating ShidongArts Cat Sticker */}
-                <div className="absolute -bottom-8 -right-6 sm:-right-10 z-20 transform rotate-6 hover:rotate-0 hover:scale-105 transition-all duration-300 drop-shadow-[0_16px_32px_rgba(0,0,0,0.7)]">
-                  <div className="w-36 sm:w-44 cursor-pointer">
+                {/* Even Bigger Floating ShidongArts Cat Sticker */}
+                <div className="absolute -bottom-10 -right-8 sm:-right-14 z-20 transform rotate-6 hover:rotate-0 hover:scale-105 transition-all duration-300 drop-shadow-[0_20px_40px_rgba(0,0,0,0.85)]">
+                  <div className="w-48 sm:w-56 lg:w-64 cursor-pointer">
                     <img
                       src="/profile/shidong-arts-logo.png"
                       alt="ShidongArts Logo Sticker"
-                      className="w-full h-auto drop-shadow-lg"
+                      className="w-full h-auto drop-shadow-xl"
                     />
                   </div>
                 </div>
