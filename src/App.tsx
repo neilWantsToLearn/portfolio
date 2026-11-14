@@ -3,8 +3,7 @@ import {
   ExternalLink,
   Check,
   X,
-  Phone,
-  Send
+  Phone
 } from 'lucide-react'
 import { InstagramIcon } from './components/Icons'
 
@@ -64,7 +63,6 @@ const artworks: Artwork[] = [
 export function App() {
   const [selectedImage, setSelectedImage] = useState<Artwork | null>(null)
   const [copied, setCopied] = useState(false)
-  const [formSent, setFormSent] = useState(false)
 
   const handleCopyPhone = () => {
     navigator.clipboard.writeText('0976 344 6957')
@@ -107,7 +105,7 @@ export function App() {
       </header>
 
       <main className="max-w-5xl mx-auto px-6 pt-36 pb-28 space-y-36">
-        {/* ─── Hero Section (Clean, Big Typography) ─── */}
+        {/* ─── Hero Section ─── */}
         <section className="space-y-10 pt-4">
           <div className="space-y-4">
             <p className="text-sm font-mono tracking-widest uppercase text-cyan-400">
@@ -157,12 +155,12 @@ export function App() {
           </div>
         </section>
 
-        {/* ─── Featured Project: Ayumi ─── */}
-        <section id="ayumi" className="space-y-8 scroll-mt-28">
+        {/* ─── Featured Project: Ayumi with Real UI Screenshots ─── */}
+        <section id="ayumi" className="space-y-10 scroll-mt-28">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/[0.08] pb-6">
             <div>
               <span className="text-xs font-mono uppercase tracking-widest text-cyan-400">
-                01 / Flagship Engineering
+                01 / Flagship Full-Stack Engineering
               </span>
               <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mt-1">
                 Ayumi Salon &amp; Wellness Platform
@@ -179,16 +177,109 @@ export function App() {
             </a>
           </div>
 
-          {/* Project Image Card */}
-          <div className="rounded-2xl overflow-hidden border border-white/[0.08] bg-neutral-900 aspect-video sm:aspect-[21/10] relative group">
+          {/* Main Hero UI: Ayumi Homepage & Service Catalogue */}
+          <div
+            onClick={() =>
+              setSelectedImage({
+                id: 'ayumi-home',
+                title: 'Ayumi Homepage & Service Catalogue',
+                subtitle: 'Production Web App • What\'s New & Service Selection',
+                image: '/projects/ayumi-home.jpg',
+                category: 'Public Portal'
+              })
+            }
+            className="rounded-2xl overflow-hidden border border-white/[0.08] bg-neutral-900 aspect-video sm:aspect-[21/10] relative group cursor-pointer"
+          >
             <img
-              src="/projects/ayumi-hero.png"
-              alt="Ayumi Platform Hero Preview"
+              src="/projects/ayumi-home.jpg"
+              alt="Ayumi Homepage and Service Catalogue"
               className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
             />
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-sm font-semibold gap-2">
+              Click to View Full Resolution
+            </div>
           </div>
 
-          {/* Project Breakdown (Minimal, Legible) */}
+          {/* Sub UI Screens: Client Appointment Portal & Studio About */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {/* Screen 1: Client Account & Appointments */}
+            <div
+              onClick={() =>
+                setSelectedImage({
+                  id: 'ayumi-portal',
+                  title: 'Ayumi Client Portal & Appointment Engine',
+                  subtitle: 'Personalized Client Dashboard • Real-time Booking Hub',
+                  image: '/projects/ayumi-portal.jpg',
+                  category: 'Client Account'
+                })
+              }
+              className="group cursor-pointer rounded-2xl overflow-hidden border border-white/[0.08] bg-neutral-900/60 hover:border-white/20 transition-all flex flex-col"
+            >
+              <div className="aspect-[16/10] overflow-hidden bg-black relative">
+                <img
+                  src="/projects/ayumi-portal.jpg"
+                  alt="Ayumi Client Portal"
+                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
+                  Click to Expand
+                </div>
+              </div>
+              <div className="p-4 flex items-center justify-between">
+                <div>
+                  <h4 className="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">
+                    Client Account &amp; Appointments
+                  </h4>
+                  <p className="text-xs text-neutral-400">
+                    Next appointment tracker, past visits &amp; favorite treatments
+                  </p>
+                </div>
+                <span className="text-[11px] font-mono text-cyan-400 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">
+                  Client Hub
+                </span>
+              </div>
+            </div>
+
+            {/* Screen 2: Brand Story & Services */}
+            <div
+              onClick={() =>
+                setSelectedImage({
+                  id: 'ayumi-about',
+                  title: 'Ayumi Brand Story & Studio Experience',
+                  subtitle: 'Salon Aesthetic & Service Standards',
+                  image: '/projects/ayumi-about.jpg',
+                  category: 'Brand Experience'
+                })
+              }
+              className="group cursor-pointer rounded-2xl overflow-hidden border border-white/[0.08] bg-neutral-900/60 hover:border-white/20 transition-all flex flex-col"
+            >
+              <div className="aspect-[16/10] overflow-hidden bg-black relative">
+                <img
+                  src="/projects/ayumi-about.jpg"
+                  alt="Ayumi About Us"
+                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold">
+                  Click to Expand
+                </div>
+              </div>
+              <div className="p-4 flex items-center justify-between">
+                <div>
+                  <h4 className="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">
+                    About Us &amp; Japanese Craftsmanship
+                  </h4>
+                  <p className="text-xs text-neutral-400">
+                    Art &amp; beauty studio branding, services story &amp; design
+                  </p>
+                </div>
+                <span className="text-[11px] font-mono text-cyan-400 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">
+                  Brand UI
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Clean 3-Pillar Technical Highlights */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
             <div className="space-y-2">
               <h3 className="text-base font-semibold text-white">Full-Stack Architecture</h3>
@@ -200,7 +291,7 @@ export function App() {
             <div className="space-y-2">
               <h3 className="text-base font-semibold text-white">Real-Time Scheduling</h3>
               <p className="text-sm text-neutral-400 leading-relaxed">
-                Dynamic calendar engine preventing double-bookings with service durations and blocked holiday management.
+                Dynamic calendar engine preventing double-bookings with service durations and operating hours.
               </p>
             </div>
 
@@ -274,7 +365,7 @@ export function App() {
           </div>
         </section>
 
-        {/* ─── About & Skills (Streamlined) ─── */}
+        {/* ─── About & Skills ─── */}
         <section id="about" className="space-y-12 scroll-mt-28">
           <div className="border-b border-white/[0.08] pb-6">
             <span className="text-xs font-mono uppercase tracking-widest text-cyan-400">
@@ -353,119 +444,70 @@ export function App() {
           </div>
         </section>
 
-        {/* ─── Contact Section (Clean & Direct) ─── */}
+        {/* ─── Contact Section (Clean Direct Links, No Form) ─── */}
         <section id="contact" className="space-y-10 scroll-mt-28">
           <div className="space-y-3">
             <span className="text-xs font-mono uppercase tracking-widest text-cyan-400">
               04 / Get in Touch
             </span>
-            <h2 className="text-4xl sm:text-6xl font-bold tracking-tight text-white">
+            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white">
               Let's build together.
             </h2>
-            <p className="text-base sm:text-lg text-neutral-400 max-w-xl">
+            <p className="text-base sm:text-xl text-neutral-400 max-w-2xl font-normal leading-relaxed">
               Available for full-stack web development projects, internships, and custom pet portrait commissions.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start pt-2">
-            {/* Direct Contact Cards */}
-            <div className="md:col-span-5 space-y-4">
-              <div
-                onClick={handleCopyPhone}
-                className="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:border-cyan-500/40 transition-colors cursor-pointer group"
-              >
-                <div className="text-xs font-mono text-neutral-400">Phone / Viber</div>
-                <div className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors flex items-center justify-between mt-1">
-                  <span>+63 976 344 6957</span>
-                  <span className="text-xs font-mono text-neutral-400">
-                    {copied ? 'Copied!' : 'Click to copy'}
-                  </span>
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
+            {/* Phone Card */}
+            <div
+              onClick={handleCopyPhone}
+              className="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:border-cyan-500/40 transition-all cursor-pointer group"
+            >
+              <div className="flex items-center justify-between text-neutral-400 mb-6">
+                <span className="text-xs font-mono">Mobile / Viber</span>
+                <Phone className="w-4 h-4 text-cyan-400" />
               </div>
-
-              <a
-                href="https://www.instagram.com/shidongarts/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:border-rose-500/40 transition-colors block group"
-              >
-                <div className="text-xs font-mono text-neutral-400">Instagram</div>
-                <div className="text-lg font-bold text-white group-hover:text-rose-400 transition-colors flex items-center justify-between mt-1">
-                  <span>@shidongarts</span>
-                  <ExternalLink className="w-4 h-4 text-neutral-500 group-hover:text-rose-400" />
-                </div>
-              </a>
-
-              <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/[0.08]">
-                <div className="text-xs font-mono text-neutral-400">Location</div>
-                <div className="text-base font-bold text-white mt-1">
-                  Batangas, Philippines
-                </div>
+              <div className="text-xl sm:text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                +63 976 344 6957
               </div>
+              <p className="text-xs font-mono text-neutral-500 mt-2">
+                {copied ? '✓ Copied to clipboard!' : 'Click to copy number'}
+              </p>
             </div>
 
-            {/* Simple Contact Form */}
-            <div className="md:col-span-7 p-6 sm:p-8 rounded-2xl bg-white/[0.03] border border-white/[0.08]">
-              {formSent ? (
-                <div className="py-12 text-center space-y-2">
-                  <div className="text-lg font-bold text-white">Thank you!</div>
-                  <p className="text-sm text-neutral-400">
-                    Your message has been sent. You can also reach out directly via phone or Instagram.
-                  </p>
-                </div>
-              ) : (
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault()
-                    setFormSent(true)
-                  }}
-                  className="space-y-4"
-                >
-                  <div>
-                    <label className="text-xs font-mono text-neutral-400 block mb-1.5">
-                      Name
-                    </label>
-                    <input
-                      required
-                      type="text"
-                      placeholder="Your name"
-                      className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white text-sm focus:outline-none focus:border-cyan-400"
-                    />
-                  </div>
+            {/* Instagram Card */}
+            <a
+              href="https://www.instagram.com/shidongarts/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:border-rose-500/40 transition-all block group"
+            >
+              <div className="flex items-center justify-between text-neutral-400 mb-6">
+                <span className="text-xs font-mono">Instagram &amp; Art</span>
+                <InstagramIcon className="w-4 h-4 text-rose-400" />
+              </div>
+              <div className="text-xl sm:text-2xl font-bold text-white group-hover:text-rose-400 transition-colors flex items-center justify-between">
+                <span>@shidongarts</span>
+                <ExternalLink className="w-5 h-5 text-neutral-500 group-hover:text-rose-400 transition-colors" />
+              </div>
+              <p className="text-xs font-mono text-neutral-500 mt-2">
+                100+ Procreate commissions
+              </p>
+            </a>
 
-                  <div>
-                    <label className="text-xs font-mono text-neutral-400 block mb-1.5">
-                      Email or Phone
-                    </label>
-                    <input
-                      required
-                      type="text"
-                      placeholder="you@example.com or phone"
-                      className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white text-sm focus:outline-none focus:border-cyan-400"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="text-xs font-mono text-neutral-400 block mb-1.5">
-                      Message
-                    </label>
-                    <textarea
-                      required
-                      rows={3}
-                      placeholder="Tell me about your project or commission idea..."
-                      className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white text-sm focus:outline-none focus:border-cyan-400 resize-none"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full py-3.5 rounded-xl bg-white text-black font-semibold text-sm hover:bg-neutral-200 transition-all flex items-center justify-center gap-2 cursor-pointer"
-                  >
-                    <span>Send Message</span>
-                    <Send className="w-3.5 h-3.5" />
-                  </button>
-                </form>
-              )}
+            {/* Location Card */}
+            <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.08]">
+              <div className="flex items-center justify-between text-neutral-400 mb-6">
+                <span className="text-xs font-mono">Location &amp; Base</span>
+                <span className="text-xs font-mono text-cyan-400">PH</span>
+              </div>
+              <div className="text-xl sm:text-2xl font-bold text-white">
+                Batangas, Philippines
+              </div>
+              <p className="text-xs font-mono text-neutral-500 mt-2">
+                STI College Batangas (BSIT)
+              </p>
             </div>
           </div>
         </section>
@@ -479,7 +521,7 @@ export function App() {
         </div>
       </footer>
 
-      {/* ─── Lightbox Modal (Clean Fullscreen Preview) ─── */}
+      {/* ─── Lightbox Modal (For Artworks & Ayumi Screenshots) ─── */}
       {selectedImage && (
         <div
           className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
@@ -487,24 +529,24 @@ export function App() {
         >
           <button
             onClick={() => setSelectedImage(null)}
-            className="absolute top-6 right-6 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+            className="absolute top-6 right-6 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors cursor-pointer"
           >
             <X className="w-6 h-6" />
           </button>
 
           <div
-            className="max-w-3xl w-full flex flex-col items-center gap-4"
+            className="max-w-4xl w-full flex flex-col items-center gap-4"
             onClick={(e) => e.stopPropagation()}
           >
             <img
               src={selectedImage.image}
               alt={selectedImage.title}
-              className="max-h-[75vh] w-auto rounded-xl shadow-2xl object-contain border border-white/10"
+              className="max-h-[80vh] w-auto rounded-xl shadow-2xl object-contain border border-white/10"
             />
             <div className="text-center space-y-1">
               <div className="text-lg font-bold text-white">{selectedImage.title}</div>
               <div className="text-xs text-neutral-400 font-mono">
-                {selectedImage.subtitle} • Painted in Procreate on iPad
+                {selectedImage.subtitle}
               </div>
             </div>
           </div>
