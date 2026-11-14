@@ -1,64 +1,45 @@
 @import "tailwindcss";
 
 @layer base {
-  :root {
-    --bg-primary: #090d16;
-    --bg-secondary: #0f172a;
-    --bg-card: rgba(17, 24, 39, 0.7);
-    --border-color: rgba(255, 255, 255, 0.08);
-    --accent-blue: #38bdf8;
-    --accent-purple: #818cf8;
-    --accent-rose: #fb7185;
-    --accent-emerald: #34d399;
-  }
-
   body {
-    background-color: #080c14;
-    color: #e2e8f0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #F6F4EE;
+    color: #141518;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     overflow-x: hidden;
   }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Syne', sans-serif;
+  }
+}
+
+/* Custom Folder Tab Shapes */
+.folder-tab {
+  position: relative;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 9px;
 }
 ::-webkit-scrollbar-track {
-  background: #090d16;
+  background: #EFECE3;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 4px;
+  background: #1D70B8;
+  border-radius: 6px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #145288;
 }
 
-/* Glow effects */
-.glow-effect {
-  position: relative;
-}
-.glow-effect::after {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  background: linear-gradient(90deg, #38bdf8, #818cf8, #fb7185);
-  border-radius: inherit;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  filter: blur(8px);
-}
-.glow-effect:hover::after {
-  opacity: 0.7;
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(1deg); }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-}
-
-.animate-float {
-  animation: float 4s ease-in-out infinite;
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
 }
