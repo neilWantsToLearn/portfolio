@@ -105,79 +105,11 @@ export function App() {
       </header>
 
       <main className="max-w-6xl mx-auto px-6 pt-32 sm:pt-36 pb-28 space-y-36">
-        {/* ─── Hero Section with Left Polaroid & Sticker Collage ─── */}
+        {/* ─── Hero Section (Text on LEFT, Photo Collage on RIGHT) ─── */}
         <section className="pt-4">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-            {/* Left Column: Polaroid Photo + Procreate Logo + ShidongArts Sticker */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-start">
-              <div className="relative w-full max-w-[320px] sm:max-w-[340px] pt-4">
-                {/* Metallic Paperclip SVG graphic at top-right of polaroid */}
-                <div className="absolute -top-3 right-8 z-30 pointer-events-none drop-shadow-md">
-                  <svg width="34" height="64" viewBox="0 0 34 64" fill="none">
-                    <path
-                      d="M10 20V48C10 52.4183 13.5817 56 18 56C22.4183 56 26 52.4183 26 48V14C26 7.37258 20.6274 2 14 2C7.37258 2 2 7.37258 2 14V46"
-                      stroke="#CBD5E1"
-                      strokeWidth="3.5"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M10 20V48C10 52.4183 13.5817 56 18 56C22.4183 56 26 52.4183 26 48V14C26 7.37258 20.6274 2 14 2C7.37258 2 2 7.37258 2 14V46"
-                      stroke="#94A3B8"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      opacity="0.8"
-                    />
-                  </svg>
-                </div>
-
-                {/* Main Polaroid Frame */}
-                <div className="bg-[#FAF8F5] p-3.5 pb-6 rounded-lg shadow-2xl shadow-black/80 transform -rotate-2 hover:rotate-0 transition-transform duration-500 border border-neutral-300 relative z-10 group">
-                  {/* Photo itself */}
-                  <div className="aspect-[4/5] overflow-hidden rounded bg-neutral-900 border border-neutral-200">
-                    <img
-                      src="/profile/neil-portrait.jpg"
-                      alt="Neil Cirus Samsaman"
-                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-
-                  {/* Handwritten / Clean Polaroid Label */}
-                  <div className="pt-3 px-1 flex items-center justify-between text-neutral-800">
-                    <span className="font-mono text-xs font-bold tracking-tight">
-                      Neil Cirus Samsaman
-                    </span>
-                    <span className="text-[11px] font-mono text-neutral-500">
-                      BSIT STI '26
-                    </span>
-                  </div>
-                </div>
-
-                {/* Floating Procreate App Icon Badge */}
-                <div className="absolute -top-3 -left-3 sm:-left-5 z-20 transform -rotate-12 hover:rotate-0 transition-transform duration-300 drop-shadow-2xl">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-black p-1 border-2 border-white/20 shadow-xl overflow-hidden flex items-center justify-center">
-                    <img
-                      src="/profile/procreate-logo.png"
-                      alt="Procreate on iPad"
-                      className="w-full h-full object-cover rounded-xl"
-                    />
-                  </div>
-                </div>
-
-                {/* Floating ShidongArts Cat Sticker */}
-                <div className="absolute -bottom-6 -right-6 sm:-right-8 z-20 transform rotate-6 hover:rotate-0 hover:scale-105 transition-all duration-300 drop-shadow-[0_12px_24px_rgba(0,0,0,0.6)]">
-                  <div className="w-28 sm:w-32 cursor-pointer">
-                    <img
-                      src="/profile/shidong-arts-logo.png"
-                      alt="ShidongArts Logo Sticker"
-                      className="w-full h-auto"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column: Hero Headline, Subtitle & Buttons */}
-            <div className="lg:col-span-7 space-y-8">
+            {/* Left Column: Hero Headline, Subtitle & Buttons */}
+            <div className="lg:col-span-7 space-y-8 order-2 lg:order-1">
               <div className="space-y-3">
                 <p className="text-xs sm:text-sm font-mono tracking-widest uppercase text-cyan-400">
                   BSIT STUDENT • STI COLLEGE BATANGAS
@@ -223,6 +155,74 @@ export function App() {
                     </>
                   )}
                 </button>
+              </div>
+            </div>
+
+            {/* Right Column: Polaroid Photo + Large Procreate Logo + Large ShidongArts Sticker */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end order-1 lg:order-2">
+              <div className="relative w-full max-w-[340px] sm:max-w-[370px] pt-4 pr-3">
+                {/* Metallic Paperclip SVG graphic at top-right of polaroid */}
+                <div className="absolute -top-3 right-8 z-30 pointer-events-none drop-shadow-md">
+                  <svg width="34" height="64" viewBox="0 0 34 64" fill="none">
+                    <path
+                      d="M10 20V48C10 52.4183 13.5817 56 18 56C22.4183 56 26 52.4183 26 48V14C26 7.37258 20.6274 2 14 2C7.37258 2 2 7.37258 2 14V46"
+                      stroke="#CBD5E1"
+                      strokeWidth="3.5"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M10 20V48C10 52.4183 13.5817 56 18 56C22.4183 56 26 52.4183 26 48V14C26 7.37258 20.6274 2 14 2C7.37258 2 2 7.37258 2 14V46"
+                      stroke="#94A3B8"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      opacity="0.8"
+                    />
+                  </svg>
+                </div>
+
+                {/* Main Polaroid Frame */}
+                <div className="bg-[#FAF8F5] p-3.5 pb-6 rounded-lg shadow-2xl shadow-black/80 transform rotate-2 hover:rotate-0 transition-transform duration-500 border border-neutral-300 relative z-10 group">
+                  {/* Photo itself */}
+                  <div className="aspect-[4/5] overflow-hidden rounded bg-neutral-900 border border-neutral-200">
+                    <img
+                      src="/profile/neil-portrait.jpg"
+                      alt="Neil Cirus Samsaman"
+                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+
+                  {/* Handwritten / Clean Polaroid Label */}
+                  <div className="pt-3 px-1 flex items-center justify-between text-neutral-800">
+                    <span className="font-mono text-xs font-bold tracking-tight">
+                      Neil Cirus Samsaman
+                    </span>
+                    <span className="text-[11px] font-mono text-neutral-500">
+                      BSIT STI '26
+                    </span>
+                  </div>
+                </div>
+
+                {/* Enlarged Floating Procreate App Icon Badge */}
+                <div className="absolute -top-5 -left-5 sm:-left-8 z-20 transform -rotate-12 hover:rotate-0 hover:scale-105 transition-all duration-300 drop-shadow-2xl">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-black p-2 border-2 border-white/20 shadow-2xl overflow-hidden flex items-center justify-center">
+                    <img
+                      src="/profile/procreate-logo.png"
+                      alt="Procreate on iPad"
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
+                  </div>
+                </div>
+
+                {/* Enlarged Floating ShidongArts Cat Sticker */}
+                <div className="absolute -bottom-8 -right-6 sm:-right-10 z-20 transform rotate-6 hover:rotate-0 hover:scale-105 transition-all duration-300 drop-shadow-[0_16px_32px_rgba(0,0,0,0.7)]">
+                  <div className="w-36 sm:w-44 cursor-pointer">
+                    <img
+                      src="/profile/shidong-arts-logo.png"
+                      alt="ShidongArts Logo Sticker"
+                      className="w-full h-auto drop-shadow-lg"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
