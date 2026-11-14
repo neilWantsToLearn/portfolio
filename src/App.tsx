@@ -20,42 +20,42 @@ const artworks: Artwork[] = [
     id: 'husky',
     title: 'Floral Wreath Husky',
     subtitle: 'Commemorative Pet Portrait',
-    image: '/art/husky-floral-wreath.jpg',
+    image: './art/husky-floral-wreath.jpg',
     category: 'Pet Portrait'
   },
   {
     id: 'cat-frame',
     title: 'Royal Celestial Cat',
     subtitle: 'Baroque Framing & Starry Sky',
-    image: '/art/cat-starry-frame.jpg',
+    image: './art/cat-starry-frame.jpg',
     category: 'Pet Portrait'
   },
   {
     id: 'stickers',
     title: 'Pet Hats Collection',
     subtitle: '9 Custom Dog & Cat Stickers',
-    image: '/art/pet-stickers-sheet.jpg',
+    image: './art/pet-stickers-sheet.jpg',
     category: 'Sticker Design'
   },
   {
     id: 'calico',
     title: 'Calico Cat Study',
     subtitle: 'Textured Digital Brushwork',
-    image: '/art/calico-cat.jpg',
+    image: './art/calico-cat.jpg',
     category: 'Pet Portrait'
   },
   {
     id: 'y2k',
     title: 'Y2K Retro Collage',
     subtitle: 'Mixed Media Portrait',
-    image: '/art/y2k-retro-portrait.jpg',
+    image: './art/y2k-retro-portrait.jpg',
     category: 'Stylized Portrait'
   },
   {
     id: 'chibi',
     title: 'Chibi Couple Illustration',
     subtitle: 'Stylized Character Commission',
-    image: '/art/chibi-couple.jpg',
+    image: './art/chibi-couple.jpg',
     category: 'Character Art'
   }
 ]
@@ -185,7 +185,7 @@ export function App() {
                   {/* Photo itself */}
                   <div className="aspect-[4/5] overflow-hidden rounded bg-neutral-900 border border-neutral-200">
                     <img
-                      src="/profile/neil-portrait.jpg"
+                      src="./profile/neil-portrait.jpg"
                       alt="Neil Cirus Samsaman"
                       className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     />
@@ -206,7 +206,7 @@ export function App() {
                 <div className="absolute -top-6 -left-6 sm:-left-9 z-20 transform -rotate-12 hover:rotate-0 hover:scale-105 transition-all duration-300 drop-shadow-2xl">
                   <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-black p-2 border-2 border-white/20 shadow-2xl overflow-hidden flex items-center justify-center">
                     <img
-                      src="/profile/procreate-logo.png"
+                      src="./profile/procreate-logo.png"
                       alt="Procreate on iPad"
                       className="w-full h-full object-cover rounded-2xl"
                     />
@@ -217,7 +217,7 @@ export function App() {
                 <div className="absolute -bottom-10 -right-8 sm:-right-14 z-20 transform rotate-6 hover:rotate-0 hover:scale-105 transition-all duration-300 drop-shadow-[0_20px_40px_rgba(0,0,0,0.85)]">
                   <div className="w-48 sm:w-56 lg:w-64 cursor-pointer">
                     <img
-                      src="/profile/shidong-arts-logo.png"
+                      src="./profile/shidong-arts-logo.png"
                       alt="ShidongArts Logo Sticker"
                       className="w-full h-auto drop-shadow-xl"
                     />
@@ -257,14 +257,14 @@ export function App() {
                 id: 'ayumi-home',
                 title: 'Ayumi Homepage & Service Catalogue',
                 subtitle: 'Production Web App • What\'s New & Service Selection',
-                image: '/projects/ayumi-home.jpg',
+                image: './projects/ayumi-home.jpg',
                 category: 'Public Portal'
               })
             }
             className="rounded-2xl overflow-hidden border border-white/[0.08] bg-neutral-900 aspect-video sm:aspect-[21/10] relative group cursor-pointer"
           >
             <img
-              src="/projects/ayumi-home.jpg"
+              src="./projects/ayumi-home.jpg"
               alt="Ayumi Homepage and Service Catalogue"
               className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
             />
@@ -282,7 +282,7 @@ export function App() {
                   id: 'ayumi-portal',
                   title: 'Ayumi Client Portal & Appointment Engine',
                   subtitle: 'Personalized Client Dashboard • Real-time Booking Hub',
-                  image: '/projects/ayumi-portal.jpg',
+                  image: './projects/ayumi-portal.jpg',
                   category: 'Client Account'
                 })
               }
@@ -290,7 +290,7 @@ export function App() {
             >
               <div className="aspect-[16/10] overflow-hidden bg-black relative">
                 <img
-                  src="/projects/ayumi-portal.jpg"
+                  src="./projects/ayumi-portal.jpg"
                   alt="Ayumi Client Portal"
                   className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
@@ -320,7 +320,7 @@ export function App() {
                   id: 'ayumi-about',
                   title: 'Ayumi Brand Story & Studio Experience',
                   subtitle: 'Salon Aesthetic & Service Standards',
-                  image: '/projects/ayumi-about.jpg',
+                  image: './projects/ayumi-about.jpg',
                   category: 'Brand Experience'
                 })
               }
@@ -328,7 +328,7 @@ export function App() {
             >
               <div className="aspect-[16/10] overflow-hidden bg-black relative">
                 <img
-                  src="/projects/ayumi-about.jpg"
+                  src="./projects/ayumi-about.jpg"
                   alt="Ayumi About Us"
                   className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
